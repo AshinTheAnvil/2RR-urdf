@@ -162,7 +162,7 @@ class two_dof_rr:
            
             q, dq, _ = self.getJointStates()
 
-            # Error in task space
+           
             x = self.solveForwardPositonKinematics(q)
             x_e = xd - x
             dx = self.solveForwardVelocityKinematics(q, dq)
@@ -176,11 +176,7 @@ class two_dof_rr:
             
             Mx = np.dot(np.dot(np.transpose(J_inv), Mq), J_inv)
             
-            #Fx = np.dot(np.dot(np.linalg.inv(Mm), Mx),(np.dot(Kp, x_e) + np.dot(Kd, dx_e)))
-            #print("1111",Fx)
-            #F_w_ext = np.dot((np.dot(np.linalg.inv(Mm), Mx) - np.eye(6)), F_ext)
-            #print("2222",F_w_ext)
-            #Fx += F_w_ext
+            
             I = np.eye(6)
             f1 = np.dot(np.dot(np.linalg.pinv(Mm), Mx),(np.dot(Kp, x_e) + np.dot(Kd, dx_e)))
             f2 = np.dot((np.dot(np.linalg.inv(Mm), Mx) - I), F_ext)
