@@ -130,8 +130,8 @@ class two_dof_rr:
     
     def imp_con(self):
         p.setRealTimeSimulation(False)
-        for link_idx in range(self.num_jts+1):
-            p.changeDynamics(self.rob_id, link_idx, linearDamping=0.0, angularDamping=0.0, jointDamping=0.0)
+        for lid in range(self.num_jts+1):
+            p.changeDynamics(self.rob_id, lid, linearDamping=0.0, angularDamping=0.0, jointDamping=0.0)
             
         
         p.setJointMotorControlArray(self.rob_id, self.mvbl_jts,
