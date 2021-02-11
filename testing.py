@@ -16,7 +16,7 @@ class two_dof_rr:
       
       self.end_eff_index = 0
 
-      self.time_step= 0.001
+      self.time_step= 1/240
      
 
 
@@ -27,7 +27,7 @@ class two_dof_rr:
         pc = p.connect(p.GUI)
         
         p.setAdditionalSearchPath(pd.getDataPath())
-        GRAVITY = -9.8
+        GRAVITY = -10
         p.setGravity(0, 0, GRAVITY)
         plane_id = p.loadURDF("plane.urdf")
         
