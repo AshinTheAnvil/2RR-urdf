@@ -202,7 +202,7 @@ class two_dof_rr:
         p.disconnect()
 
 
-        ### calling my def and other computations
+      
 if __name__ == '__main__':
 
     robo = two_dof_rr()
